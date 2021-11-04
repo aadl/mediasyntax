@@ -40,9 +40,13 @@ class syntax_plugin_mediasyntax_nonbold extends DokuWiki_Syntax_Plugin
 
   function render($mode, Doku_Renderer $renderer, $data)
   {
+    GLOBAL $bold;
     if($mode == 'xhtml')
     {
-      $renderer->doc .= "**";
+      if (!$bold) $renderer->doc .= "<b>";
+      else $renderer->doc .= "</b>";
+      if ($bold) $bold=false;
+      else $bold=true;
     }
     return false;
   }
