@@ -17,7 +17,7 @@ class syntax_plugin_mediasyntax_codeblock extends DokuWiki_Syntax_Plugin
       If it is not, then the listblock will "steal" the \n at its end-of-line.
       Then, a codeblock directly under a listblock will not trigger the \n .* regex.
     */
-    return 9;
+    return 59;
   }
 
   function connectTo($mode)
